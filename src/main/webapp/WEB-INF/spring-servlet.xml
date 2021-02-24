@@ -1,0 +1,131 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+    	http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context.xsd
+    	http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<!-- Provide support for component scanning -->
+	<context:component-scan base-package="com.rohitdabas" />
+	<context:component-scan base-package="com.rohitdabas1" />
+	
+	<context:component-scan base-package="com.rohitdabas.service" />
+	<context:component-scan base-package="com.rohitdabas.dao" />
+	
+	
+	<!-- 
+	<context:component-scan base-package="com.rohitdabas.beans" />
+	 -->
+	 <context:annotation-config />
+
+	<!--Provide support for conversion, formatting and validation -->
+	<mvc:annotation-driven/>
+	
+	  <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
+        <property name="prefix" value="/WEB-INF/Pages/"></property>  
+        <property name="suffix" value=".jsp"></property>
+        <property name="order" value="2" />          
+     </bean>  
+     
+     
+     <!-- 
+     <bean class = "org.springframework.web.servlet.view.ResourceBundleViewResolver">
+       <property name = "basename" value = "views" />    views.properties file name
+       <property name="order" value="1" />
+     </bean>
+     
+     
+     <bean class="org.springframework.web.servlet.view.XmlViewResolver">
+	      <property name="location">
+	         <value>/WEB-INF/spring-views.xml</value>   spring-views.xml file name
+	      </property>
+	      <property name="order" value="0" />
+	</bean>
+      -->
+     
+     
+     <bean name="/controllerInterface.bean" 
+       class="com.rohitdabas.ControllerInterfaceExample"/>
+     
+     <bean name="/controllerInterfaceAbstract.bean" 
+       class="com.rohitdabas.ControllerInterfaceExampleAbstract"/>
+     
+     
+     
+     
+     
+    <!--  <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" >
+		 <property name="caseSensitive" value="true" />
+		 <property name="pathPrefix" value="/customer" />
+	  </bean>
+		
+        <bean class="com.rohitdabas.WelcomeController" />
+      -->
+     
+     
+     
+     
+     
+  <!--    <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
+<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />  
+<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />  
+<property name="username" value="system" />  
+<property name="password" value="oracle" />  
+</bean>  
+   -->
+   
+   
+   <!-- 
+   <bean id="dataSource"
+	class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+	<property name="url" value="jdbc:sqlserver://localhost:8080;DatabaseName=dbName;" />
+	<property name="username" value="username" />
+	<property name="password" value="password" />
+    </bean> -->
+   
+   
+   <!--   <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">  
+       <property name="dataSource" ref="ds"></property>  
+     </bean>
+    -->  
+     
+     
+     
+<!--      
+     
+     
+     
+ <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
+<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />  
+<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />  
+<property name="username" value="system" />  
+<property name="password" value="oracle" />  
+</bean>  
+
+
+
+  
+<bean id="jdbcobject" class="org.springframework.jdbc.core.JdbcTemplate">  
+<property name="dataSource" ref="ds"></property>  
+</bean>  
+  
+  
+  
+   -->
+  
+
+     
+     
+     
+     
+     
+     
+     
+
+</beans>

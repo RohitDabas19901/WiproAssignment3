@@ -1,0 +1,30 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Redirect view --> 
+	<!-- <bean id="dummy" 
+	   class="org.springframework.web.servlet.view.RedirectView">    
+	    -->
+	    <bean id="dummy" 
+	   class="org.springframework.web.servlet.view.JstlView">
+	    
+	   
+	   <!-- org.springframework.web.servlet.view.JstlView -->
+       <property name="url" value="/WEB-INF/Pages2/DummyRedirectPage2.jsp" />
+    </bean>
+    
+    
+     <bean id="dummy1" 
+	   class="org.springframework.web.servlet.view.JstlView">
+	    
+	   
+	   <!-- org.springframework.web.servlet.view.JstlView -->
+       <property name="url" value="/WEB-INF/Pages2/DummyRedirectPage2.jsp" />
+    </bean>
+    
+    
+    
+	
+</beans>
